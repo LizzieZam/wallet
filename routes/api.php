@@ -23,3 +23,5 @@ Route::get('pedido','pedidoController@index');
 Route::post('pedido','pedidoController@store');
 Route::get('plato','platoController@index');
 Route::post('plato','platoController@store');
+Route::get('juego','juegoController@index');
+Route::post('juego','juegoController@store');
