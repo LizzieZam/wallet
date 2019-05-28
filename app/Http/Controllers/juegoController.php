@@ -15,7 +15,7 @@ class juegoController extends Controller
 
     public function index(){
 		
-		return \App\juego::latest('id')->first()->get('puntos');
+		return \App\juego::latest('id')->first()->pluck('puntos');
 		
 	}
 	public function show($id){
