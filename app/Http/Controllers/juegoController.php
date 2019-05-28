@@ -15,7 +15,7 @@ class juegoController extends Controller
 
     public function index(){
 		
-		return \App\juego::all();
+		return \App\juego::latest()->first();
 		
 	}
 	public function show($id){
