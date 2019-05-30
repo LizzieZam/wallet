@@ -14,8 +14,8 @@ class juegoController extends Controller
     }
 
     public function index(){
-		
-		return \App\juego::latest('id')->get('puntos')->first()['puntos'];
+		return \App\juego::latest('id')->first();
+		//return \App\juego::latest('id')->get('puntos')->first()['puntos'];
 		
 	}
 	public function show($id){
