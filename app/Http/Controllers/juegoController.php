@@ -13,9 +13,14 @@ class juegoController extends Controller
         $this->juego = $juego;
     }
 
-    public function index(){
+   /* public function index(){
 		return \App\juego::latest('id')->first();
 		//return \App\juego::latest('id')->get('puntos')->first()['puntos'];
+		
+	}*/
+      public function index(){
+		return \App\juego::orderBy('puntos','desc');
+		
 		
 	}
 	public function show($id){
