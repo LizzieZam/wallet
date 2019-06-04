@@ -19,7 +19,7 @@ class juegoController extends Controller
 		
 	}*/
       public function index(){
-		return \App\juego::orderBy('puntos','desc');
+		return \App\juego::orderBy('puntos','desc')->get();
 		
 		
 	}
