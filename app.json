@@ -1,0 +1,28 @@
+{
+  "addons": [
+    "cleardb"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ],
+  "description": "wallet",
+  "env": {
+    "APP_KEY": {
+      "required": true
+    },
+    "CLEARDB_DATABASE_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "wallet",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
