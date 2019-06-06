@@ -25,7 +25,7 @@ Route::post('pedido','pedidoController@store');
 Route::put('pedido/{id}','pedidoController@update');
 Route::get('plato','platoController@index');
 Route::post('plato','platoController@store');
-Route::put('plato/{id}','platoController@update');
+Route::post('plato/{id}','platoController@update');
 Route::get('juego','juegoController@index');
 Route::post('juego','juegoController@store');
 
