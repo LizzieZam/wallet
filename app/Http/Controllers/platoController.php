@@ -28,6 +28,7 @@ class platoController extends Controller
 	public function update(Request $request,$id){
         $row=\App\plato::findOrFail($id);
         $row=$request->all();
+        var_dump($row);
         $row->save();
 		return $row;
 	}
