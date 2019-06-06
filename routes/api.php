@@ -18,12 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('restaurante','restauranteController@index');
+Route::get('restaurante/{id}','restauranteController@show');
 Route::post('restaurante','restauranteController@store');
 Route::post('restaurante/{id}','restauranteController@update');
 Route::get('pedido','pedidoController@index');
+Route::get('pedido/{id}','pedidoController@show');
 Route::post('pedido','pedidoController@store');
 Route::post('pedido/{id}','pedidoController@update');
 Route::get('plato','platoController@index');
+Route::get('plato/{id}','platoController@show');
 Route::post('plato','platoController@store');
 Route::post('plato/{id}','platoController@update');
 Route::get('juego','juegoController@index');
