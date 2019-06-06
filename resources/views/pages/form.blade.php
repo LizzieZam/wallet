@@ -43,7 +43,7 @@
           </div><br/>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="medium-12  columns">
-            <input value="SAVE" class="button success hollow" id="submit"type="submit" disabled>
+            <input value="SAVE" class="button success hollow" id="submit"type="submit" >
           </div>
         
         </form>
