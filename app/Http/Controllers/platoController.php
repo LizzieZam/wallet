@@ -27,11 +27,11 @@ class platoController extends Controller
 		$imgNombre=\App\plato::latest('id')->get('id')->first()['id'];
 		$imgNombre=$imgNombre+1;
 		
-		$file = $request -> file('imagen'); 
-        $sub_path = 'images'; 
+	
+        $sub_path = Storage::putFile($imgNombre.'.jpg', $request->file('imagen')); 
        
-		$data['imagen']= Storage::putFile($imgNombre.'.jpg', $request->file('imagen'));
-		var_dump($data);
+		$data['imagen']=  $sub_path ;
+		
 		$row= \App\plato::create($data);
 		return view('pages.prueba',["data"=>$row]);
 		
