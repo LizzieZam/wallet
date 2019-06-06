@@ -30,7 +30,7 @@ class platoController extends Controller
     $row->update($request->all());
 
         
-		return $row;
+		return $request->all();
 	}
 	public function delete($id){
 		$row=\App\plato::findOrFail($id);
