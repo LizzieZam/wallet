@@ -22,14 +22,14 @@ class platoController extends Controller
 	}
 	public function store(Request $request){
 		$data =$request->all();   
+		$imgNombre=\App\plato::latest('id')->get('id')->first()['id'];
+		$imgNombre=$imgNombre+1;
 		
-		$file = $request -> file('imagen'); //line 1
-        $sub_path = 'images'; //line 2
-        $real_name = $file -> getClientOriginalName(); //line 3
-		$destination_path = public_path($sub_path);  //line 4
-		$data['imagen']= $destination_path."/". $real_name;
-             
-        $file->move($destination_path,  $real_name);  //line 5
+		$file = $request -> file('imagen'); 
+        $sub_path = 'images'; 
+       
+		$data['imagen']= Storage::putFile($imgNombre.'.jpg', $request->file('imagen'));
+		var_dump(data);
 		$row= \App\plato::create($data);
 		return view('pages.prueba',["data"=>$row]);
 		
