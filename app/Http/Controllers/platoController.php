@@ -29,8 +29,8 @@ class platoController extends Controller
         $row=\App\plato::find($id);
        print_r($request->all());
         
-        $row->save();
-		return $row;
+        /*$row->save();
+		return $row;*/
 	}
 	public function delete($id){
 		$row=\App\plato::findOrFail($id);
