@@ -29,7 +29,7 @@ class pedidoController extends Controller
 	}
 	public function update(Request $request,$id){
         $row=\App\pedido::findOrFail($id);
-        
+        $row->update($request->all());
 		return $row;
 	}
 	public function delete($id){
