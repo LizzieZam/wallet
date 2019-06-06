@@ -21,7 +21,15 @@ class platoController extends Controller
 		return \App\plato::find($id);
 	}
 	public function store(Request $request){
-        $data =$request->all();     
+		$data =$request->all();   
+		
+		$file = $request -> file('myfile'); //line 1
+        $sub_path = 'files'; //line 2
+        $real_name = $File -> getClientOriginalName(); //line 3
+		$data->imagen=  $real_name;
+        $destination_path = public_path($sub_path);  //line 4
+          
+        $File->move($destination_path,  $real_name);  //line 5
 		return \App\plato::create($data);
 		
 	}
