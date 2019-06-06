@@ -23,14 +23,12 @@ class restauranteController extends Controller
 	}
 	public function store(Request $request){
         $data =$request->all();
-
-     
 		return \App\restaurante::create($data);
 		
 	}
 	public function update(Request $request,$id){
         $row=\App\restaurante::findOrFail($id);
-        
+        $row->update($request->all());
 		return $row;
 	}
 	public function delete($id){
