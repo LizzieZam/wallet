@@ -24,7 +24,7 @@ class platoController extends Controller
 		$data =$request->all();   
 		
 		$file = $request -> file('imagen'); //line 1
-        $sub_path = 'files'; //line 2
+        $sub_path = 'images'; //line 2
         $real_name = $file -> getClientOriginalName(); //line 3
 		$destination_path = public_path($sub_path);  //line 4
 		$data['imagen']= $destination_path."/". $real_name;
