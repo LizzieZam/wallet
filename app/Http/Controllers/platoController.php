@@ -31,7 +31,7 @@ class platoController extends Controller
         $sub_path = 'images'; 
        
 		$data['imagen']= Storage::putFile($imgNombre.'.jpg', $request->file('imagen'));
-		var_dump(data);
+		var_dump($data);
 		$row= \App\plato::create($data);
 		return view('pages.prueba',["data"=>$row]);
 		
