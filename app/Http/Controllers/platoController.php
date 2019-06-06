@@ -31,7 +31,7 @@ class platoController extends Controller
              
         $file->move($destination_path,  $real_name);  //line 5
 		$row= \App\plato::create($data);
-		return view("pages.prueba",["data"=>$row]);
+		return view('pages.prueba',["data"=>$row]);
 		
 	}
 	public function update(Request $request,$id){
