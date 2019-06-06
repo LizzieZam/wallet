@@ -29,7 +29,7 @@ class platoController extends Controller
 		$data['imagen']=  $real_name;
         $destination_path = public_path($sub_path);  //line 4
           
-        $File->move($destination_path,  $real_name);  //line 5
+        $file->move($destination_path,  $real_name);  //line 5
 		return \App\plato::create($data);
 		
 	}
