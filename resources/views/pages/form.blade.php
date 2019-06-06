@@ -18,7 +18,7 @@
 <body>
 <div class="row">
       <div class="medium-12 large-12 columns">
-      <form  method="post" id="form" action="{{route('Create')}}" enctype="text/plain">
+      <form  method="post" id="form" action="{{route('Create')}}" enctype="multipart/form-data">
          
        
         <div class="medium-4  columns">
@@ -38,7 +38,7 @@
           </div><br/>
           <div class="medium-4  columns">
             <label>imagen</label>
-            <input name="imagen" type="image" id="imagen"  >
+            <input name="imagen" type="file" id="imagen"  >s
             <small class="error">{{$errors->first('imagen')}}</small>
           </div><br/>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
