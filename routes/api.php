@@ -19,10 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('restaurante','restauranteController@index');
 Route::post('restaurante','restauranteController@store');
-Route::put('restaurante/{id}','restauranteController@update');
+Route::post('restaurante/{id}','restauranteController@update');
 Route::get('pedido','pedidoController@index');
 Route::post('pedido','pedidoController@store');
-Route::put('pedido/{id}','pedidoController@update');
+Route::post('pedido/{id}','pedidoController@update');
 Route::get('plato','platoController@index');
 Route::post('plato','platoController@store');
 Route::post('plato/{id}','platoController@update');
