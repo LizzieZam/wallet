@@ -27,7 +27,8 @@ class platoController extends Controller
 	}
 	public function update(Request $request,$id){
         $row=\App\plato::findOrFail($id);
-        
+        $row=$request->all();
+        $row->save();
 		return $row;
 	}
 	public function delete($id){
