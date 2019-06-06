@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.form');
 });
+Route::post('plato','platoController@store')->name('Create');

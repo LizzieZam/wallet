@@ -28,17 +28,17 @@
           </div><br/>
           <div class="medium-4  columns">
             <label>Celular</label>
-            <input name="tipo" type="text" id="tipo" placeholder="plato fuerte"  disabled>
+            <input name="tipo" type="text" id="tipo" placeholder="plato fuerte"  >
             <small class="error">{{$errors->first('tipo')}}</small>
           </div><br/>
           <div class="medium-4  columns">
             <label>E-mail</label>
-            <input name="precio" type="text" id="precio" placeholder="2.50" disabled>
+            <input name="precio" type="text" id="precio" placeholder="2.50" >
             <small class="error">{{$errors->first('precio')}}</small>
           </div><br/>
           <div class="medium-4  columns">
             <label>imagen</label>
-            <input name="imagen" type="image" id="imagen" placeholder="2.50" disabled>
+            <input name="imagen" type="image" id="imagen"  >
             <small class="error">{{$errors->first('imagen')}}</small>
           </div><br/>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
