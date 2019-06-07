@@ -30,7 +30,7 @@ class platoController extends Controller
 	
         $sub_path = Storage::putFileAs(public_path("images"), $request->file('imagen'),$imgNombre.'.jpg'); 
 		$data['imagen']=  $sub_path ;
-		
+		$this->uploadOne( $request->file('imagen'), 'images/', 'public', $imgNombre.$request->file('imagen')->getClientOriginalExtension());
 		$row= \App\plato::create($data);
 		return view('pages.prueba',["data"=>$row]);
 		
