@@ -36,3 +36,8 @@ Route::post('plato/{id}','platoController@update');
 Route::delete('plato/{id}','platoController@delete');
 
 
+Route::get('pago','pagoController@index');
+Route::get('pago/{id}','pagoController@show');
+Route::post('pago','pagoController@store');
+Route::post('pago/{id}','pagoController@update');
+Route::delete('pago/{id}','pagoController@delete');
