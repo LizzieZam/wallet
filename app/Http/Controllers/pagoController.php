@@ -42,7 +42,7 @@ class pagoController extends Controller
 		$dataDP['precio']=$request['precio'];
 		$dataDP['idPago']=$row['id'];
 		$dataDP['fecha']=date('Y-m-d H:i:s');
-		$row2=\App\pagoDetalle::create($data);
+		$row2=\App\pagoDetalle::create($dataDP);
 		return "Pago registrado exitosamente";
 	}
 	public function update(Request $request,$id){
