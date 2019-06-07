@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Traits\UploadTrait;
+use Image;
+
 use App\plato;
 
 class platoController extends Controller
@@ -26,14 +27,11 @@ class platoController extends Controller
 	public function store(Request $request){
 		$data =$request->all();   
 		$imgNombre=\App\plato::latest('id')->get('id')->first()['id'];
-		$imgNombre=$imgNombre+1;
-		
-	
-        $sub_path = Storage::putFileAs(public_path("images"), $request->file('imagen'),$imgNombre.'.jpg'); 
-		$data['imagen']=   asset($sub_path );
-	//	uploadOne( $request->file('imagen'), 'images/', 'public', $imgNombre.$request->file('imagen')->getClientOriginalExtension());
-		$row= \App\plato::create($data);
-		return view('pages.prueba',["data"=>$row]);
+		$imgNombre="comida".($imgNombre+1). '.' . $request->file('imagen')->getClientOriginalExtension();
+		$imagen = Image::make($request->file('imagen'));
+		$imagen->save(public_path()."/images/" . $imgNombre, 100);
+		$data['imagen']= "/images/" . $imgNombre;
+		return \App\plato::create($data);
 		
 	}
 	public function update(Request $request,$id){
